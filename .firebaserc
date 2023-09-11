@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "ingresopc-c1ffa": {
+      "hosting": {
+        "IngresoPc": [
+          "ingresopc-c1ffa"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "ingresopc-c1ffa"
+  }
+}

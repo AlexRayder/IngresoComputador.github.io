@@ -1,4 +1,10 @@
 import { Component } from '@angular/core';
+// En tu componente.ts
+import 'jquery';
+import 'popper.js';
+import 'bootstrap';
+
+// ...
 
 @Component({
   selector: 'app-root',
@@ -8,3 +14,4 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'IngresoPc';
 }
+

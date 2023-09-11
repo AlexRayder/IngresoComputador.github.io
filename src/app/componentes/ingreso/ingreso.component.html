@@ -1,0 +1,59 @@
+<!-- app-ingreso.component.html -->
+<div class="formulario">
+    <br>
+    <form [formGroup]="frmIngreso" (ngSubmit)="registrar()" enctype="multipart/form-data" class="was-validated border-1">
+
+        <div>
+            <h1 class="text-center text-bg-dark">Registrar Ingreso</h1>
+        </div>
+        <div class="mb-3">
+            <label for="txtIdentificacion" class="fw-bold">Identificación:</label>
+            <input type="text" formControlName="txtIdentificacion" id="txtIdentificacion" class="form-control" required>
+        </div>
+
+        <div class="mb-3">
+            <label for="txtNombre" class="fw-bold">Nombre:</label>
+            <input type="text" formControlName="txtNombre" id="txtNombre" class="form-control" required>
+        </div>
+        <div class="form-floating mb-3">
+            <select formControlName="txtTipo" id="txtTipo" class="form-select" required>
+                <option value="">Seleccione</option>
+                <option value="Aprendiz">Aprendiz</option>
+                <option value="Instructor">Instructor</option>
+                <!-- Agrega las opciones adecuadas aquí -->
+            </select>
+            <label for="txtTipo" class="fw-bold">Tipo:</label>
+
+        </div>
+        <div class="form-floating mb-3">
+            <select formControlName="cbMarcaComputador" id="cbMarcaComputador" class="form-select" required>
+                <option value="">Seleccione</option> <!-- Cambiado el valor de la opción -->
+                <option value="Asus">Asus</option>
+                <option value="Lenovo">Lenovo</option>
+                <option value="Mac">Mac</option>
+                <!-- Asegúrate de llenar esta lista de opciones con las marcas de computadoras disponibles -->
+            </select>
+            <label for="cbMarcaComputador" class="fw-bold">Marca de Computadora:</label>
+        </div>
+        <div class="mb-3">
+            <label for="txtSerial" class="fw-bold">Serial:</label>
+            <input type="text" formControlName="txtSerial" id="txtSerial" class="form-control" required>
+        </div>
+
+       
+
+        <div class="ax">
+            <button class="btn btn-dark fw-bold m-2" style="color: white;" type="submit">Registrar</button>
+            <button type="button" class="btn btn-primary" (click)="consultarIdentificacion()">Consultar</button>
+            <button type="button" class="btn btn-secondary m-2" (click)="limpiar()">Limpiar</button>
+            <button type="button" class="btn btn-success m-2" (click)=" actualizarRegistro()">Actualizar</button>
+            <button type="button" class="btn btn-danger m-2" (click)="eliminarRegistro()">Eliminar</button>
+            <!-- Cambia el routerLink a la página de destino correcta -->
+            <a [routerLink]="'/'">
+                <button type="button" class="btn btn-warning m-2">Cancelar</button>
+            </a>
+        </div>
+    </form>
+    <!-- Agrega una sección para mostrar el mensaje -->
+    <div class="text-center">{{ mensaje }}</div>
+</div>
